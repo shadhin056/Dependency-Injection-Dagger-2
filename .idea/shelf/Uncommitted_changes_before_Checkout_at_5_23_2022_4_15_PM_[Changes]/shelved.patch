@@ -1,0 +1,21 @@
+Index: app/src/main/java/com/anushka/didemo/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.anushka.didemo\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    private lateinit var smartPhone: SmartPhone\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n\r\n        DaggerSmartPhoneComponent.create()\r\n            .getSmartPhone()\r\n            .makeACallWithRecording()\r\n\r\n//        val smartPhone = SmartPhone(\r\n//            Battery(),\r\n//            SIMCard(ServiceProvider()),\r\n//            MemoryCard()\r\n//        )\r\n//            .makeACallWithRecording()\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/anushka/didemo/MainActivity.kt b/app/src/main/java/com/anushka/didemo/MainActivity.kt
+--- a/app/src/main/java/com/anushka/didemo/MainActivity.kt	
++++ b/app/src/main/java/com/anushka/didemo/MainActivity.kt	
+@@ -11,7 +11,9 @@
+ 
+         DaggerSmartPhoneComponent.create()
+             .getSmartPhone()
+-            .makeACallWithRecording()
++            .simCard
++            .getConnection()
++
+ 
+ //        val smartPhone = SmartPhone(
+ //            Battery(),
