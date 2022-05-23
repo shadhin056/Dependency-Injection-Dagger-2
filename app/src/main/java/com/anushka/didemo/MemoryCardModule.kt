@@ -9,6 +9,6 @@ class MemoryCardModule (val memorySize:Int){
     @Provides
     fun providesMemoryCard():MemoryCard{
         Log.i("MYTAG","Size of the memory is $memorySize")
-        return MemoryCard()
+        return MemoryCard(memorySize)
     }
 }
